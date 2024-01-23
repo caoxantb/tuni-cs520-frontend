@@ -15,3 +15,18 @@
 
   Use template logic to check if the player prop is null or not. If it is null, don't render the component.
  -->
+<script setup>
+const props = defineProps({
+  player: {
+    type: Object,
+  },
+});
+
+</script>
+
+<template>
+  <div v-if="player" id="selected-player">
+    <div id="player-name">{{ player.name }}</div>
+    <div id="player-status">{{ player.isActive ? 'active' : 'inactive' }}</div>
+  </div>
+</template>

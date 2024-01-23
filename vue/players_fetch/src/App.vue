@@ -19,12 +19,75 @@
   3. Whenever the page is refreshed, fetch players data, store and display it.
  -->
 
-<template></template>
+<script setup>
+import { reactive, onMounted } from "vue";
 
-<script>
+import ListPlayers from "./components/ListPlayers.vue";
+import RequestStatus from "./components/RequestStatus.vue";
+import SelectedPlayer from "./components/SelectedPlayer.vue";
+
 const REQ_STATUS = {
   loading: "Loading...",
   success: "Finished!",
   error: "An error has occurred!!!",
 };
+
+const state = reactive({
+  players: [],
+  selectedPlayer: null,
+  requestStatusMessage: REQ_STATUS.loading,
+});
+
+const fetchAllPlayers = async () => {
+  try {
+    state.players = await fetchData("http://localhost:3001/api/players");
+    state.requestStatusMessage = REQ_STATUS.success;
+  } catch (error) {
+    console.error(error)
+    state.requestStatusMessage = REQ_STATUS.error;
+  }
+};
+
+const fetchPlayerById = async (playerId) => {
+  try {
+    state.requestStatusMessage = REQ_STATUS.loading;
+    state.selectedPlayer = await fetchData(
+      `http://localhost:3001/api/players/${playerId}`
+    );
+    state.requestStatusMessage = REQ_STATUS.success;
+  } catch (error) {
+    console.error(error)
+    state.requestStatusMessage = REQ_STATUS.error;
+  }
+};
+
+onMounted(() => {
+  fetchAllPlayers();
+});
+
+const fetchData = async (url) => {
+  const res = await fetch(url, {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json;charset=UTF-8",
+    },
+  });
+
+  const data = await res.json();
+  return data;
+};
 </script>
+
+<template>
+  <div>
+    <RequestStatus>
+      <template v-slot:status>
+        {{ state.requestStatusMessage }}
+      </template>
+    </RequestStatus>
+
+    <ListPlayers :players="state.players" :get-player="fetchPlayerById" />
+    <SelectedPlayer :player="state.selectedPlayer" />
+  </div>
+</template>

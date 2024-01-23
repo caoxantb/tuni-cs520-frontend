@@ -20,4 +20,30 @@
   e2e tests: 
   Although you might pass the unit tests, there may be some extra attributes or functionality that you need to add in order to get the component to work properly in the e2e tests. Please refer to the e2e tests for more details (found in cypress/e2e).
  -->
+<script setup>
+const props = defineProps({
+  player: {
+    type: Object,
+    required: true,
+  },
+});
 
+const emit = defineEmits(["player-clicked"]);
+
+const clickHandler = () => {
+  emit("player-clicked", props.player.id);
+};
+</script>
+
+<template>
+  <li :id="`player-${player.id}`">
+    <a
+      href="#"
+      @click.prevent="clickHandler"
+      @keyup.enter="clickHandler"
+      tabindex="0"
+    >
+      {{ player.name }}
+    </a>
+  </li>
+</template>
