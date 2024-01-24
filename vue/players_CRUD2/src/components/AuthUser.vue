@@ -18,3 +18,80 @@
   Once user is logged in or registered, the form should be hidden and the link should change to "Logout".
 
  -->
+
+<script setup>
+import { reactive, ref, watchEffect } from "vue";
+
+const props = defineProps({
+  isLoggedIn: {
+    type: Boolean,
+  },
+});
+const state = reactive({
+  isLoggedIn: props.isLoggedIn,
+  displayLogin: true,
+});
+const username = ref("")
+const password = ref("")
+const emit = defineEmits(["logout", "login", "register"]);
+
+watchEffect(() => {
+  state.isLoggedIn = props.isLoggedIn;
+});
+
+const authLinkToggle = () => {
+  if (state.isLoggedIn) {
+    emit("logout");
+  } else {
+    state.displayLogin = !state.displayLogin;
+  }
+};
+
+const formSubmitHandler = () => {
+  const emitAction = state.displayLogin ? "login" : "register";
+  emit(emitAction, { username: username.value, password: password.value });
+  username.value = ""
+  password.value = ""
+};
+
+</script>
+
+<template>
+  <div>
+    <a @click="authLinkToggle">{{
+      state.isLoggedIn
+        ? "Logout"
+        : state.displayLogin
+        ? "Go to register"
+        : "Go to login"
+    }}</a>
+  </div>
+
+  <form
+    v-if="!state.isLoggedIn"
+    id="auth-form"
+    @submit.prevent="formSubmitHandler"
+  >
+    <input
+      v-model="username"
+      type="text"
+      id="username"
+      name="auth-username"
+      placeholder="Username"
+      required
+    />
+
+    <input
+      v-model="password"
+      type="password"
+      id="password"
+      name="auth-password"
+      placeholder="Password"
+      required
+    />
+
+    <button class="btn-auth" type="submit">
+      {{ state.displayLogin ? "Login" : "Register" }}
+    </button>
+  </form>
+</template>
