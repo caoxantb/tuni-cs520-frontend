@@ -15,6 +15,21 @@
  */
 
 import { ListPlayer } from "./ListPlayer.jsx";
-export const ListPlayers = () => {
-  return <div></div>;
+
+export const ListPlayers = ({ players, getPlayer }) => {
+  return players ? (
+    <div>
+      <ul id="players-list">
+        {players.map((player) => (
+          <ListPlayer
+            key={player.id}
+            player={player}
+            onClick={getPlayer}
+          />
+        ))}
+      </ul>
+    </div>
+  ) : (
+    <></>
+  );
 };

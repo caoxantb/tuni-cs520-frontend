@@ -8,6 +8,6 @@
  * NOTE: use the same ids, classes and html elements as you did in Vue. Refer to tests in the __tests__ folder to pass the unit tests, and to the cypress/e2e folder for the end-to-end tests.
 */
 
-export const RequestStatus = () => {
-  return <div></div>;
+export const RequestStatus = ({ children }) => {
+  return <div id="request-status">{children}</div>;
 };

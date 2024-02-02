@@ -11,6 +11,15 @@
  *
  */
 
-export const ListPlayer = () => {
-  return <div></div>;
+export const ListPlayer = ({ player, onClick }) => {
+  const { id, name } = player || {};
+  return (
+    <div>
+      <li id={`player-${id}`}>
+        <a href="#" onClick={() => onClick(id)}>
+          {name}
+        </a>
+      </li>
+    </div>
+  );
 };

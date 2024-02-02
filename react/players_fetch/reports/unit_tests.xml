@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="11" failures="0" errors="0" time="0.832">
+    <testsuite name="components/__tests__/ListPlayer.test.jsx" timestamp="2024-02-02T23:43:17.979Z" hostname="Caos-MacBook-Pro.local" tests="4" failures="0" errors="0" skipped="0" time="0.15">
+        <testcase classname="components/__tests__/ListPlayer.test.jsx" name="ListPlayer &gt; renders a list item with the player&apos;s id as its id" time="0.066">
+        </testcase>
+        <testcase classname="components/__tests__/ListPlayer.test.jsx" name="ListPlayer &gt; displays the player name inside the anchor element" time="0.031">
+        </testcase>
+        <testcase classname="components/__tests__/ListPlayer.test.jsx" name="ListPlayer &gt; calls the onClick prop with the player id when the link is clicked" time="0.03">
+        </testcase>
+        <testcase classname="components/__tests__/ListPlayer.test.jsx" name="ListPlayer &gt; anchor should be focusable via the keyboard (by pressing the tab key)" time="0.022">
+        </testcase>
+    </testsuite>
+    <testsuite name="components/__tests__/ListPlayers.test.jsx" timestamp="2024-02-02T23:43:17.980Z" hostname="Caos-MacBook-Pro.local" tests="2" failures="0" errors="0" skipped="0" time="0.129">
+        <testcase classname="components/__tests__/ListPlayers.test.jsx" name="ListPlayers &gt; renders a list with id &quot;players-list&quot;" time="0.082">
+        </testcase>
+        <testcase classname="components/__tests__/ListPlayers.test.jsx" name="ListPlayers &gt; renders a ListPlayer for each player in the players prop" time="0.046">
+        </testcase>
+    </testsuite>
+    <testsuite name="components/__tests__/RequestStatus.test.jsx" timestamp="2024-02-02T23:43:17.980Z" hostname="Caos-MacBook-Pro.local" tests="2" failures="0" errors="0" skipped="0" time="0.021">
+        <testcase classname="components/__tests__/RequestStatus.test.jsx" name="RequestStatus component &gt; should render the component, inside which is an element with id &apos;request-status&apos;" time="0.014">
+        </testcase>
+        <testcase classname="components/__tests__/RequestStatus.test.jsx" name="RequestStatus component &gt; should render the component with the correct status" time="0.005">
+            <system-out>
+run here [36m&lt;ref *1&gt;[39m HTMLDivElement {
+  [32m&apos;__reactFiber$hrxv610adue&apos;[39m: [36m&lt;ref *2&gt;[39m FiberNode {
+    tag: [33m5[39m,
+    key: [1mnull[22m,
+    elementType: [32m&apos;div&apos;[39m,
+    type: [32m&apos;div&apos;[39m,
+    stateNode: [36m[Circular *1][39m,
+    return: FiberNode {
+      tag: [33m0[39m,
+      key: [1mnull[22m,
+      elementType: [36m[Function: RequestStatus][39m,
+      type: [36m[Function: RequestStatus][39m,
+      stateNode: [1mnull[22m,
+      return: [36m[FiberNode][39m,
+      child: [36m[Circular *2][39m,
+      sibling: [1mnull[22m,
+      index: [33m0[39m,
+      ref: [1mnull[22m,
+      pendingProps: [36m[Object][39m,
+      memoizedProps: [36m[Object][39m,
+      updateQueue: [1mnull[22m,
+      memoizedState: [1mnull[22m,
+      dependencies: [1mnull[22m,
+      mode: [33m1[39m,
+      flags: [33m1[39m,
+      subtreeFlags: [33m1048576[39m,
+      deletions: [1mnull[22m,
+      lanes: [33m0[39m,
+      childLanes: [33m0[39m,
+      alternate: [1mnull[22m,
+      actualDuration: [33m0[39m,
+      actualStartTime: [33m-1[39m,
+      selfBaseDuration: [33m0[39m,
+      treeBaseDuration: [33m0[39m,
+      _debugSource: [36m[Object][39m,
+      _debugOwner: [1mnull[22m,
+      _debugNeedsRemount: [33mfalse[39m,
+      _debugHookTypes: [1mnull[22m
+    },
+    child: FiberNode {
+      tag: [33m6[39m,
+      key: [1mnull[22m,
+      elementType: [1mnull[22m,
+      type: [1mnull[22m,
+      stateNode: [36m[Text][39m,
+      return: [36m[Circular *2][39m,
+      child: [1mnull[22m,
+      sibling: [36m[FiberNode][39m,
+      index: [33m0[39m,
+      ref: [1mnull[22m,
+      pendingProps: [32m&apos;okhzpl&apos;[39m,
+      memoizedProps: [32m&apos;okhzpl&apos;[39m,
+      updateQueue: [1mnull[22m,
+      memoizedState: [1mnull[22m,
+      dependencies: [1mnull[22m,
+      mode: [33m1[39m,
+      flags: [33m1048576[39m,
+      subtreeFlags: [33m0[39m,
+      deletions: [1mnull[22m,
+      lanes: [33m0[39m,
+      childLanes: [33m0[39m,
+      alternate: [1mnull[22m,
+      actualDuration: [33m0[39m,
+      actualStartTime: [33m-1[39m,
+      selfBaseDuration: [33m0[39m,
+      treeBaseDuration: [33m0[39m,
+      _debugSource: [1mnull[22m,
+      _debugOwner: [1mnull[22m,
+      _debugNeedsRemount: [33mfalse[39m,
+      _debugHookTypes: [1mnull[22m
+    },
+    sibling: [1mnull[22m,
+    index: [33m0[39m,
+    ref: [1mnull[22m,
+    pendingProps: { id: [32m&apos;request-status&apos;[39m, children: [36m[Array][39m },
+    memoizedProps: { id: [32m&apos;request-status&apos;[39m, children: [36m[Array][39m },
+    updateQueue: [1mnull[22m,
+    memoizedState: [1mnull[22m,
+    dependencies: [1mnull[22m,
+    mode: [33m1[39m,
+    flags: [33m0[39m,
+    subtreeFlags: [33m1048576[39m,
+    deletions: [1mnull[22m,
+    lanes: [33m0[39m,
+    childLanes: [33m0[39m,
+    alternate: [1mnull[22m,
+    actualDuration: [33m0[39m,
+    actualStartTime: [33m-1[39m,
+    selfBaseDuration: [33m0[39m,
+    treeBaseDuration: [33m0[39m,
+    _debugSource: {
+      fileName: [32m&apos;/Users/caoxantb/Personal/Tampere University/tu-frontend/react/players_fetch/src/components/RequestStatus.jsx&apos;[39m,
+      lineNumber: [33m12[39m,
+      columnNumber: [33m10[39m
+    },
+    _debugOwner: FiberNode {
+      tag: [33m0[39m,
+      key: [1mnull[22m,
+      elementType: [36m[Function: RequestStatus][39m,
+      type: [36m[Function: RequestStatus][39m,
+      stateNode: [1mnull[22m,
+      return: [36m[FiberNode][39m,
+      child: [36m[Circular *2][39m,
+      sibling: [1mnull[22m,
+      index: [33m0[39m,
+      ref: [1mnull[22m,
+      pendingProps: [36m[Object][39m,
+      memoizedProps: [36m[Object][39m,
+      updateQueue: [1mnull[22m,
+      memoizedState: [1mnull[22m,
+      dependencies: [1mnull[22m,
+      mode: [33m1[39m,
+      flags: [33m1[39m,
+      subtreeFlags: [33m1048576[39m,
+      deletions: [1mnull[22m,
+      lanes: [33m0[39m,
+      childLanes: [33m0[39m,
+      alternate: [1mnull[22m,
+      actualDuration: [33m0[39m,
+      actualStartTime: [33m-1[39m,
+      selfBaseDuration: [33m0[39m,
+      treeBaseDuration: [33m0[39m,
+      _debugSource: [36m[Object][39m,
+      _debugOwner: [1mnull[22m,
+      _debugNeedsRemount: [33mfalse[39m,
+      _debugHookTypes: [1mnull[22m
+    },
+    _debugNeedsRemount: [33mfalse[39m,
+    _debugHookTypes: [1mnull[22m
+  },
+  [32m&apos;__reactProps$hrxv610adue&apos;[39m: { id: [32m&apos;request-status&apos;[39m, children: [ [32m&apos;okhzpl&apos;[39m, [32m&apos; &apos;[39m ] }
+}
+okhzpl
+
+            </system-out>
+        </testcase>
+    </testsuite>
+    <testsuite name="components/__tests__/SelectedPlayer.test.jsx" timestamp="2024-02-02T23:43:17.981Z" hostname="Caos-MacBook-Pro.local" tests="3" failures="0" errors="0" skipped="0" time="0.016">
+        <testcase classname="components/__tests__/SelectedPlayer.test.jsx" name="SelectedPlayer component &gt; should render active player data correctly" time="0.011">
+        </testcase>
+        <testcase classname="components/__tests__/SelectedPlayer.test.jsx" name="SelectedPlayer component &gt; should render inactive player data correctly" time="0.003">
+        </testcase>
+        <testcase classname="components/__tests__/SelectedPlayer.test.jsx" name="SelectedPlayer component &gt; should not render if selected player is null" time="0.001">
+        </testcase>
+    </testsuite>
+</testsuites>
