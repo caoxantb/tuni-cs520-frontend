@@ -70,15 +70,15 @@ function App() {
       console.error(error);
       setRequestStatus(REQ_STATUS.error);
     }
-  }
+  };
 
-  return <div>
-    <RequestStatus>
-      {requestStatus}
-      </RequestStatus>
-    <ListPlayers players={players} getPlayer={fetchPlayerById} />
-    <SelectedPlayer player={selectedPlayer} />
-  </div>;
+  return (
+    <div>
+      <RequestStatus>{requestStatus}</RequestStatus>
+      <ListPlayers players={players} getPlayer={fetchPlayerById} />
+      <SelectedPlayer player={selectedPlayer} />
+    </div>
+  );
 }
 
 export default App;
