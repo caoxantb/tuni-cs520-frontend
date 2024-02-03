@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="1.048" tests="2" failures="1">
+  <testsuite name="Root Suite" timestamp="2024-02-03T00:49:08" tests="0" file="cypress/e2e/network/putRequest.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Requests: PUT" timestamp="2024-02-03T00:49:08" tests="2" time="1.044" failures="1">
+    <testcase name="Requests: PUT should be able to update a players active-state correctly in the frontend and the backend. " time="0.000" classname="should be able to update a players active-state correctly in the frontend and the backend. ">
+      <failure message="The following error originated from your application code, not from Cypress.
+
+  &gt; Cannot read properties of undefined (reading &apos;id&apos;)
+
+When Cypress detects uncaught errors originating from your application it will automatically fail the current test.
+
+This behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.
+
+https://on.cypress.io/uncaught-exception-from-application" type="TypeError"><![CDATA[TypeError: The following error originated from your application code, not from Cypress.
+
+  > Cannot read properties of undefined (reading 'id')
+
+When Cypress detects uncaught errors originating from your application it will automatically fail the current test.
+
+This behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.
+
+https://on.cypress.io/uncaught-exception-from-application
+    at <unknown> (http://localhost:4173/src/components/ListPlayers.jsx:26:14)
+    at Array.map (<anonymous>)
+    at ListPlayers (http://localhost:4173/src/components/ListPlayers.jsx:19:131)
+    at renderWithHooks (http://localhost:4173/node_modules/.vite/deps/react-dom_client.js?v=697f7040:12169:26)
+    at updateFunctionComponent (http://localhost:4173/node_modules/.vite/deps/react-dom_client.js?v=697f7040:14575:28)
+    at beginWork (http://localhost:4173/node_modules/.vite/deps/react-dom_client.js?v=697f7040:15910:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:4173/node_modules/.vite/deps/react-dom_client.js?v=697f7040:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:4173/node_modules/.vite/deps/react-dom_client.js?v=697f7040:3697:24)
+    at invokeGuardedCallback (http://localhost:4173/node_modules/.vite/deps/react-dom_client.js?v=697f7040:3731:39)
+    at beginWork$1 (http://localhost:4173/node_modules/.vite/deps/react-dom_client.js?v=697f7040:19759:15)]]></failure>
+    </testcase>
+    <testcase name="Requests: PUT Should not update the player if update fails." time="0.478" classname="Should not update the player if update fails.">
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -63,6 +63,7 @@ describe("Requests: POST", () => {
           forceNetworkError: true,
         });
         findAndClickButton("add");
+        cy.wait(500);
         cy.get("#input-player").should("have.value", "");
         checkRequestStatus(REQ_STATUS.loading).then(() => {
           postError.sendResponse();
