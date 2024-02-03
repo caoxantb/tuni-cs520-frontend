@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="2.065" tests="2" failures="0">
+  <testsuite name="Root Suite" timestamp="2024-02-03T19:09:02" tests="0" file="cypress/e2e/network/authRequests.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Requests: REGISTER" timestamp="2024-02-03T19:09:02" tests="2" time="2.042" failures="0">
+    <testcase name="Requests: REGISTER should be able to succesfully complete the registration process" time="1.302" classname="should be able to succesfully complete the registration process">
+    </testcase>
+    <testcase name="Requests: REGISTER should not be able to register if post-request fails" time="0.691" classname="should not be able to register if post-request fails">
+    </testcase>
+  </testsuite>
+</testsuites>
