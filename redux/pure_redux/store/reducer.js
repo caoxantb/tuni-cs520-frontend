@@ -2,7 +2,7 @@
  * Implement the reducer for your redux store.
  */
 
-import * as actions from './actionTypes.js';
+import * as actions from "./actionTypes.js";
 
 /**
  * Get the new state of the application after the action is performed on the previous state
@@ -37,7 +37,35 @@ import * as actions from './actionTypes.js';
  * @returns {Array} the new state of the application
  */
 
-const playersReducer = (state = [], action) => {};
+const playersReducer = (state = [], action) => {
+  switch (action.type) {
+    case actions.ADD_PLAYER:
+      const ids = state.map((player) => player.id);
+      const newId = !ids.length ? 1 : ids[ids.length - 1] + 1;
+      const { name, isActive } = action.payload;
+
+      return [
+        ...state,
+        {
+          id: newId,
+          name,
+          isActive,
+        },
+      ];
+
+    case actions.REMOVE_PLAYER:
+      return state.filter((player) => player.id !== action.payload.id);
+
+    case actions.TOGGLE_PLAYER_STATUS:
+      return state.map((player) =>
+        player.id === action.payload.id
+          ? { ...player, isActive: !player.isActive }
+          : player
+      );
+
+    default:
+      return state;
+  }
+};
 
 export default playersReducer;
-

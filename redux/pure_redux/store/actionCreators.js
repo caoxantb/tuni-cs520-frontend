@@ -2,7 +2,7 @@
  * Implement the actions creators addPlayer, removePlayer, togglePlayerStatus
  */
 
-import * as actions from './actionTypes.js';
+import * as actions from "./actionTypes.js";
 
 /**
  * Get the action object used to dispatch the action for adding a new player
@@ -28,7 +28,16 @@ import * as actions from './actionTypes.js';
  * @param {object} player new player object
  * @returns {object} action object for adding a new player
  */
-export const addPlayer = (player) => {};
+export const addPlayer = (player) => {
+  const { name, isActive } = player;
+
+  // if (!name || !isActive) throw new Error("error");
+
+  return {
+    type: actions.ADD_PLAYER,
+    payload: { name, isActive },
+  };
+};
 
 /**
  * Get the action object used to dispatch the action for removing a player
@@ -53,7 +62,14 @@ export const addPlayer = (player) => {};
  * @param {number} id player id (integer)
  * @returns {object} action object for removing a player
  */
-export const removePlayer = id => {};
+export const removePlayer = (id) => {
+  // if (!Number.isInteger(id)) throw new Error("error");
+
+  return {
+    type: actions.REMOVE_PLAYER,
+    payload: { id },
+  };
+};
 
 /**
  * Get the action object used to dispatch the action for changing a player's status
@@ -78,4 +94,11 @@ export const removePlayer = id => {};
  * @param {number} id player id (integer)
  * @returns {object} action object for changing a player's status
  */
-export const togglePlayerStatus = id => {};
+export const togglePlayerStatus = (id) => {
+  // if (!Number.isInteger(id)) throw new Error("error");
+
+  return {
+    type: actions.TOGGLE_PLAYER_STATUS,
+    payload: { id },
+  };
+};
