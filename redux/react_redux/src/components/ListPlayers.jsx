@@ -1,5 +1,10 @@
 /** @format */
 
+import { useSelector } from "react-redux";
+
+import { ListPlayer } from "./ListPlayer.jsx";
+
+
 /** @format
  * @description
  * Student instructions:
@@ -9,10 +14,28 @@
  *
  */
 export const ListPlayers = ({ selectPlayer }) => {
+  const players = useSelector(state => state.players)
+
   return (
     <div>
       <h2>List of players</h2>
-      TODO: ListPlayers
+      {
+        players ? (
+          <div>
+            <ul id="players-list">
+              {players.map((player) => (
+                <ListPlayer
+                  key={player.id}
+                  player={player}
+                  onClick={selectPlayer}
+                />
+              ))}
+            </ul>
+          </div>
+        ) : (
+          <></>
+        )
+      }
     </div>
   );
 };

@@ -10,5 +10,14 @@
  */
 
 export const ListPlayer = ({ player, onClick }) => {
-  return "TODO: ListPlayer";
+  const { id, name } = player || {};
+  return (
+    <div>
+      <li id={`player-${id}`}>
+        <a href="#" onClick={() => onClick(id)}>
+          {name}
+        </a>
+      </li>
+    </div>
+  );
 };

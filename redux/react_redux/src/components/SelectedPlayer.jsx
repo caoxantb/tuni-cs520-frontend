@@ -1,5 +1,7 @@
 /** @format */
 
+import { useSelector } from "react-redux";
+
 /** @format
  * @description
  * Student instructions:
@@ -9,10 +11,20 @@
 
  */
 export const SelectedPlayer = () => {
+  const selectedPlayer = useSelector((state) => state.selectedPlayer);
+  const {name, isActive} = selectedPlayer || {}
+
   return (
     <div>
       <h3>Selected Player</h3>
-      TODO: SelectedPlayer
+      {(selectedPlayer && Object.keys(selectedPlayer).length) ? (
+        <div id="selected-player">
+          <div id="player-name">{name}</div>
+          <div id="player-status">{isActive ? "active" : "inactive"}</div>
+        </div>
+      ) : (
+        <></>
+      )}
     </div>
   );
 };

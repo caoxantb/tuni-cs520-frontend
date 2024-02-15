@@ -9,16 +9,67 @@
 
 */
 
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setPlayers } from "./redux/actionCreators/playersActions.js";
+
 import { ListPlayers } from "./components/ListPlayers.jsx";
 import { SelectedPlayer } from "./components/SelectedPlayer.jsx";
 import { RequestStatus } from "./components/RequestStatus.jsx";
 import { REQ_STATUS } from "../cypress/e2e/constants.js";
+import { setSelectedPlayer } from "./redux/actionCreators/selectedPlayerActions.js";
+import { setStatus } from "./redux/actionCreators/statusActions.js";
 
 function App() {
+  const dispatch = useDispatch()
+
+  const fetchData = async (url) => {
+    const res = await fetch(url, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json;charset=UTF-8",
+      },
+    });
+
+    const data = await res.json();
+    return data;
+  };
+
+  const fetchAllPlayers = async () => {
+    try {
+      dispatch(setStatus(REQ_STATUS.loading))
+      const players = await fetchData("http://localhost:3001/api/players");
+      dispatch(setPlayers(players));
+      dispatch(setStatus(REQ_STATUS.success))
+    } catch (error) {
+      console.error(error);
+      dispatch(setStatus(REQ_STATUS.error))
+    }
+  };
+
+  const selectPlayer = async (playerId) => {
+    try {
+      dispatch(setStatus(REQ_STATUS.loading))
+      const player = await fetchData(
+        `http://localhost:3001/api/players/${playerId}`
+      );
+      dispatch(setSelectedPlayer(player));
+      dispatch(setStatus(REQ_STATUS.success))
+    } catch (error) {
+      console.error(error);
+      dispatch(setStatus(REQ_STATUS.error))
+    }
+  };
+
+  useEffect(() => {
+    fetchAllPlayers()
+  }, [])
+
   return (
     <>
       <RequestStatus />
-      <ListPlayers />
+      <ListPlayers selectPlayer={selectPlayer}/>
       <SelectedPlayer />
     </>
   );
