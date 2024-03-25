@@ -1,9 +1,9 @@
 import { Link, useParams, useNavigate } from "react-router-dom";
-import { dataTestIds } from "../tests/constants/components";
+import { dataTestIds } from "../../tests/constants/components";
 import { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchUsers, removeUsers } from "../redux/actions/userActions";
-import { useRedirect } from "../hooks/useRedirect";
+import { fetchUsers, removeUsers } from "../../redux/actions/userActions";
+import { useRedirect } from "../../hooks/useRedirect";
 
 const UserPage = () => {
   const auth = useSelector((state) => state.auth);

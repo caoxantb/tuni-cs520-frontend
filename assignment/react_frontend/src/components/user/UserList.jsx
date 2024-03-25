@@ -1,9 +1,9 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect, useState } from "react";
-import { dataTestIds } from "../tests/constants/components";
+import { useEffect } from "react";
+import { dataTestIds } from "../../tests/constants/components";
 import { Link } from "react-router-dom";
-import { fetchUsers, removeUsers } from "../redux/actions/userActions";
-import { useRedirect } from "../hooks/useRedirect";
+import { fetchUsers, removeUsers } from "../../redux/actions/userActions";
+import { useRedirect } from "../../hooks/useRedirect";
 
 const UserList = () => {
   const users = useSelector((state) => state.users);

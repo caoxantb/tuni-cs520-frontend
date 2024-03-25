@@ -1,9 +1,9 @@
 import { Link, useParams, useNavigate } from "react-router-dom";
-import { dataTestIds } from "../tests/constants/components";
+import { dataTestIds } from "../../tests/constants/components";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addNotification } from "../redux/actions/notificationActions";
-import { removeProduct, fetchProducts } from "../redux/actions/productActions";
+import { addNotification } from "../../redux/actions/notificationActions";
+import { removeProduct, fetchProducts } from "../../redux/actions/productActions";
 import { useCallback } from "react";
 
 const ProductItem = () => {

@@ -1,11 +1,10 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
-import { dataTestIds } from "../tests/constants/components";
+import { dataTestIds } from "../../tests/constants/components";
 import { Link } from "react-router-dom";
-import { fetchProducts, removeProduct } from "../redux/actions/productActions";
+import { fetchProducts, removeProduct } from "../../redux/actions/productActions";
 import ProductCreator from "./ProductCreator";
-import { addToCart } from "../redux/actions/cartActions";
-import { useCallback } from "react";
+import { addToCart } from "../../redux/actions/cartActions";
 
 const ProductList = () => {
   const auth = useSelector((state) => state.auth);

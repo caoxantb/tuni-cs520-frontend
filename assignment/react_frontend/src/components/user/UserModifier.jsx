@@ -1,9 +1,8 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { dataTestIds } from "../tests/constants/components";
+import { dataTestIds } from "../../tests/constants/components";
 import { useDispatch, useSelector } from "react-redux";
 import { useCallback, useState, useEffect } from "react";
-import { useRedirect } from "../hooks/useRedirect";
-import { fetchUsers, updateUser } from "../redux/actions/userActions";
+import { fetchUsers, updateUser } from "../../redux/actions/userActions";
 
 const UserModifier = () => {
   const users = useSelector((state) => state.users);

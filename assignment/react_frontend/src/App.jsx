@@ -1,19 +1,13 @@
 import { Route, Routes } from "react-router-dom";
 import { dataTestIds } from "./tests/constants/components";
 
+import {UserList, UserPage, UserModifier} from "./components/user"
+import {ProductList, ProductItem, ProductModifier} from "./components/product"
+import {OrderList, OrderItem, Cart} from "./components/order"
+import {AuthForm} from "./components/auth";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
-import AuthForm from "./components/AuthForm";
-import Cart from "./components/Cart";
-import OrderList from "./components/OrderList";
-import OrderItem from "./components/OrderItem";
 import Notification from "./components/Notification";
-import ProductList from "./components/ProductList";
-import ProductItem from "./components/ProductItem";
-import ProductModifier from "./components/ProductModifier";
-import UserList from "./components/UserList";
-import UserPage from "./components/UserPage";
-import UserModifier from "./components/UserModifier";
 
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";

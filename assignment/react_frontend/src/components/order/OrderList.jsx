@@ -1,8 +1,8 @@
 import { useSelector, useDispatch } from "react-redux";
-import { dataTestIds } from "../tests/constants/components";
-import { useRedirect } from "../hooks/useRedirect";
+import { dataTestIds } from "../../tests/constants/components";
+import { useRedirect } from "../../hooks/useRedirect";
 import { useEffect } from "react";
-import { fetchOrders } from "../redux/actions/orderActions";
+import { fetchOrders } from "../../redux/actions/orderActions";
 import { Link } from "react-router-dom";
 
 const OrderList = () => {

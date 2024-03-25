@@ -1,9 +1,9 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { dataTestIds } from "../tests/constants/components";
+import { dataTestIds } from "../../tests/constants/components";
 import { useDispatch, useSelector } from "react-redux";
 import { useCallback, useState, useEffect } from "react";
-import { fetchProducts, updateProduct } from "../redux/actions/productActions";
-import { useRedirect } from "../hooks/useRedirect";
+import { fetchProducts, updateProduct } from "../../redux/actions/productActions";
+import { useRedirect } from "../../hooks/useRedirect";
 
 const ProductModifier = () => {
   const products = useSelector((state) => state.products);

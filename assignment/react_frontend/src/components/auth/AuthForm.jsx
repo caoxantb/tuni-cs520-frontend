@@ -2,12 +2,12 @@ import { useState, useCallback } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
-import { dataTestIds } from "../tests/constants/components";
-import { capitalize } from "../helpers/capitalize";
-import { login, register } from "../redux/actions/authActions";
+import { dataTestIds } from "../../tests/constants/components";
+import { capitalize } from "../../helpers/capitalize";
+import { login, register } from "../../redux/actions/authActions";
 
-import { useRedirect } from "../hooks/useRedirect";
-import { addNotification } from "../redux/actions/notificationActions";
+import { useRedirect } from "../../hooks/useRedirect";
+import { addNotification } from "../../redux/actions/notificationActions";
 
 const AuthForm = () => {
   const [inputs, setInputs] = useState({

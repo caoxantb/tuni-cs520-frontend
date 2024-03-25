@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom";
-import { dataTestIds } from "../tests/constants/components";
+import { dataTestIds } from "../../tests/constants/components";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useRedirect } from "../hooks/useRedirect";
+import { useRedirect } from "../../hooks/useRedirect";
 import { useDispatch } from "react-redux";
-import { addNotification } from "../redux/actions/notificationActions";
+import { addNotification } from "../../redux/actions/notificationActions";
 
 const OrderItem = () => {
   const [orderItem, setOrderItem] = useState();

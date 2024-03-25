@@ -1,7 +1,7 @@
 import { useState, useCallback } from "react";
-import { dataTestIds } from "../tests/constants/components";
+import { dataTestIds } from "../../tests/constants/components";
 import { useDispatch } from "react-redux";
-import { createProduct } from "../redux/actions/productActions";
+import { createProduct } from "../../redux/actions/productActions";
 
 const ProductCreator = (props) => {
   const [inputs, setInputs] = useState({

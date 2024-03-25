@@ -1,16 +1,16 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { dataTestIds } from "../tests/constants/components";
-import { useRedirect } from "../hooks/useRedirect";
+import { dataTestIds } from "../../tests/constants/components";
+import { useRedirect } from "../../hooks/useRedirect";
 import {
   addToCart,
   removeFromCart,
   fetchCart,
-} from "../redux/actions/cartActions";
-import { createOrder } from "../redux/actions/orderActions";
-import { addNotification } from "../redux/actions/notificationActions";
+} from "../../redux/actions/cartActions";
+import { createOrder } from "../../redux/actions/orderActions";
+import { addNotification } from "../../redux/actions/notificationActions";
 import { useCallback, useEffect } from "react";
-import { purchaseCart } from "../redux/actions/cartActions";
+import { purchaseCart } from "../../redux/actions/cartActions";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
